@@ -1,1 +1,3 @@
-# redux
+# template
+
+React/Redux project template.
