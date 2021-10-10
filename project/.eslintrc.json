@@ -7,7 +7,8 @@
     "extends": [
         "plugin:react/recommended",
         "airbnb", 
-        "airbnb-typescript"
+        "airbnb-typescript",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,8 +21,10 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
+        "prettier/prettier": "error"
     }
 }
