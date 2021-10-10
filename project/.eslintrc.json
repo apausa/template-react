@@ -1,12 +1,12 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es2021": true,
-        "jest": true
+        "node": true
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb",
+        "airbnb", 
         "airbnb-typescript"
     ],
     "parser": "@typescript-eslint/parser",
@@ -14,7 +14,7 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true
         },
-        "project": "./project/tsconfig.json",
+        "project": "./tsconfig.json",
         "ecmaVersion": 12,
         "sourceType": "module"
     },
@@ -24,4 +24,4 @@ module.exports = {
     ],
     "rules": {
     }
-};
+}
