@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,7 +45,6 @@
   "devDependencies": {
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb-typescript": "^14.0.1",
-    "jest": "^27.2.4"
+    "eslint-config-airbnb-typescript": "^14.0.1"
   }
 }
