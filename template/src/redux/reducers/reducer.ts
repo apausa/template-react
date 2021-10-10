@@ -6,15 +6,10 @@ interface Action {
 }
 
 export default function Reducer(state = [], action: Action) {
-  const variable = state;
+  let variable = state;
   switch (action.type) {
-    case actions.CREATE:
-      break;
     case actions.READ:
-      break;
-    case actions.UPDATE:
-      break;
-    case actions.DELETE:
+      variable = action.data;
       break;
     default:
       break;
