@@ -1,6 +1,6 @@
 export interface Task {
   description: string,
-  status: boolean,
+  state: boolean,
   date: Date;
 }
 
