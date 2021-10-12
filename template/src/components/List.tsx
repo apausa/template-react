@@ -1,26 +1,37 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createTask, updateTask, deleteTask } from '../redux/actions/taskCreator';
+import { createTask } from '../redux/actions/taskCreator';
 
 export default function List() {
   const dispatch = useDispatch();
   const list = useSelector((store: any) => store.task);
   const [description, setDescription] = useState('');
-  const [index, setIndex] = useState(0);
-  const create = () => dispatch(createTask(description));
-  const update = () => dispatch(updateTask(description, index));
-  const remove = () => dispatch(deleteTask(description));
+  const handleOnChange = ({ target: { value } }: any) => setDescription(value);
+  const create = ({ target: { value }, which }: any) => {
+    if (which !== 13 || !value) return;
+    dispatch(createTask(description));
+    setDescription('');
+  };
+
   return (
     <main>
       <h1>Tasks</h1>
       <form className="to-do__create-update">
-        <input type="text" name="input" value={description} />
-        <button type="button">Send</button>
+        <input
+          type="text"
+          name="input"
+          placeholder="Write your task!"
+          value={description}
+          onChange={handleOnChange}
+          onKeyPress={create}
+        />
+
       </form>
       <ul>
         {list.map(() => (
-          <li>
-            <button className="task__task" type="button">{toDo}</button>
+          <li className="task">
+            <button className="task__description" type="button" value="first" />
             <button className="task__delete" type="button">Delete</button>
           </li>
         ))}
