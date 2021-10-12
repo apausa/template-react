@@ -1,17 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import {
-  BrowserRouter, Route, Redirect, Switch
-} from 'react-router-dom';
-import store from './redux/store';
-import './styles/App.css';
+import List from './components/List';
+import configureStore from './redux/store';
 
-function App() {
+export default function App() {
   return (
-    <Provider store={store()}>
-    
-    <Provider />
+    <Provider store={configureStore()}>
+      <List />
+    </Provider>
   );
 }
-
-export default App;

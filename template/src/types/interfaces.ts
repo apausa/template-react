@@ -6,5 +6,6 @@ export interface Task {
 
 export interface Action {
   type: string,
-  data: Task;
+  task: Task;
+  index: number;
 }
