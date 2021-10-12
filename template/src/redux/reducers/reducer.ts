@@ -1,18 +1,24 @@
 import actions from '../actions/types';
 
-interface Action {
-  type: string,
-  data?: any
+interface Task {
+  description: string,
+  status: boolean,
+  date: Date;
 }
 
-export default function Reducer(state = [], action: Action) {
-  let variable = state;
+interface Action {
+  type: string,
+  data: Task;
+}
+
+export default function Reducer(initial: Task[] = [], action: Action) {
+  let list = initial;
   switch (action.type) {
-    case actions.READ:
-      variable = action.data;
+    case actions.CREATE:
+      list = [...list, action.data];
       break;
     default:
       break;
   }
-  return variable;
+  return list;
 }

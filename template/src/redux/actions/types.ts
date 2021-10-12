@@ -1,3 +1,5 @@
 export default {
-  READ: 'READ',
+  CREATE: 'CREATE',
+  DELETE: 'DELETE',
+  UPDATE: 'UPDATE',
 };
