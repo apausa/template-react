@@ -1,7 +1,7 @@
 export interface Task {
   description: string,
   state: boolean,
-  date: Date;
+  date: number;
 }
 
 export interface Action {

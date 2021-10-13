@@ -1,17 +1,20 @@
 import actions from './taskTypes';
-// import { Task } from '../../types/interfaces';
+import { Task } from '../../types/interfaces';
 
-export function createTask(task: string) {
-  // Control de errores.
-  return {
-    type: actions.CREATE_TASK,
-    task,
+export function createTask(task: Task) {
+  return (dispatch: any) => {
+    dispatch({
+      type: actions.CREATE_TASK,
+      task,
+    });
   };
 }
 
-export function deleteTask(task: string) {
-  return {
-    type: actions.DELETE_TASK,
-    task,
+export function deleteTask(task: Task) {
+  return (dispatch: any) => {
+    dispatch({
+      type: actions.DELETE_TASK,
+      task,
+    });
   };
 }
